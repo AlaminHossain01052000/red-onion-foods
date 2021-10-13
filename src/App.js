@@ -4,14 +4,39 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Pages/Header/Header';
 
 import Home from './Pages/Home/Home/Home';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Breakfast from './Pages/Home/Meals/Breakfast/Breakfast';
+import Lunch from './Pages/Home/Meals/Lunch/Lunch';
+import Dinner from './Pages/Home/Meals/Dinner/Dinner';
 
 function App() {
 
   return (
     <div className="App">
-      <Header></Header>
-      <Home></Home>
-      <div style={{ width: "100px", height: "1500px", backgroundColor: "red" }}></div>
+      <BrowserRouter>
+        <Header></Header>
+        <Home></Home>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route exact path="/home">
+            <Home></Home>
+          </Route>
+          <Route path="/breakfast">
+            <Breakfast></Breakfast>
+          </Route>
+          <Route path="/lunch">
+            <Lunch></Lunch>
+          </Route>
+          <Route path="/dinner">
+            <Dinner></Dinner>
+          </Route>
+        </Switch>
+      </BrowserRouter>
+
+
+
     </div>
   );
 }

@@ -1,0 +1,15 @@
+.meals-container a{
+    color: #222f3e;
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 30px;
+    text-decoration: none;
+}
+.meals-container a:hover{
+    color: gray;
+}
+.meals-container a:focus{
+    color: #ff6b6b;
+    font-size: 22px;
+    
+}
