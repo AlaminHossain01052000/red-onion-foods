@@ -8,6 +8,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Breakfast from './Pages/Home/Meals/Breakfast/Breakfast';
 import Lunch from './Pages/Home/Meals/Lunch/Lunch';
 import Dinner from './Pages/Home/Meals/Dinner/Dinner';
+import Signup from './Pages/Signup/Signup';
 
 function App() {
 
@@ -23,14 +24,8 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          <Route path="/breakfast">
-            <Breakfast></Breakfast>
-          </Route>
-          <Route path="/lunch">
-            <Lunch></Lunch>
-          </Route>
-          <Route path="/dinner">
-            <Dinner></Dinner>
+          <Route path="/signup">
+            <Signup></Signup>
           </Route>
         </Switch>
       </BrowserRouter>
