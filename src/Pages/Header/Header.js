@@ -32,7 +32,7 @@ const Header = () => {
     return (
         <div>
             <Navbar id="my-menu" collapseOnSelect expand="lg" variant="dark" className="fixed-top" >
-                <Container className="d-flex align-items-center">
+                <Container className="d-flex align-items-center row-cols-2">
                     <Navbar.Brand href="#home"><img className="w-25" src={logo} alt="" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">

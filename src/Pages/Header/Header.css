@@ -15,6 +15,13 @@
 .navbar-dark .navbar-nav .nav-link:focus {
     color: #ff6b6b;
 }
+.navbar-dark .navbar-toggler {
+  border: 0px;
+  text-align: right;
+  width:15%;
+}
+
+
 
 .btn-signup {background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%)}
 .btn-signup {

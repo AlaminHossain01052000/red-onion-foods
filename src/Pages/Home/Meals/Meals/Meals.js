@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Nav } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 import Breakfast from '../Breakfast/Breakfast';
 import Dinner from '../Dinner/Dinner';
