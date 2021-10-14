@@ -15,12 +15,12 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header></Header>
-        <Home></Home>
+
         <Switch>
           <Route exact path="/">
             <Home></Home>
           </Route>
-          <Route exact path="/home">
+          <Route path="/home">
             <Home></Home>
           </Route>
           <Route path="/breakfast">
