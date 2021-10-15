@@ -9,26 +9,34 @@ import Breakfast from './Pages/Home/Meals/Breakfast/Breakfast';
 import Lunch from './Pages/Home/Meals/Lunch/Lunch';
 import Dinner from './Pages/Home/Meals/Dinner/Dinner';
 import Signup from './Pages/Signup/Signup';
+import AuthProvider from './context/AuthProvider';
+import Cart from './Pages/Cart/Cart';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 
 function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header></Header>
+      <AuthProvider>
+        <BrowserRouter>
+          <Header></Header>
 
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route path="/signup">
-            <Signup></Signup>
-          </Route>
-        </Switch>
-      </BrowserRouter>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/signup">
+              <Signup></Signup>
+            </Route>
+            <PrivateRoute path="/cart">
+              <Cart></Cart>
+            </PrivateRoute>
+          </Switch>
+        </BrowserRouter>
+      </AuthProvider>
 
 
 

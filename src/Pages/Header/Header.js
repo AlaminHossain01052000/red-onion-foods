@@ -4,8 +4,11 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import logo from "../../images/logo2.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Header = () => {
+    const { user, logOut } = useAuth();
     const [navbg, setNavbg] = useState(false);
 
     const changeBg = () => {
@@ -26,10 +29,14 @@ const Header = () => {
             myMenu.style.backgroundColor = "white";
         }
     }
+    const signOut = () => {
+        logOut();
+    }
 
 
 
     return (
+
         <div>
             <Navbar id="my-menu" collapseOnSelect expand="lg" variant="dark" className="fixed-top" >
                 <Container className="d-flex align-items-center row-cols-2">
@@ -38,9 +45,15 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
 
                         <Nav className="ms-auto text-black align-items-center d-flex">
-                            <Nav.Link href="#deets" className="fs-5 fw-bold"><FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></Nav.Link>
-                            <Nav.Link href="#deets" className="fs-5 fw-bold">Login</Nav.Link>
-                            <Nav.Link href="Signup" className="text-dark fs-5 fw-bold">
+                            <Nav.Link as={Link} to="/cart" className="fs-5 fw-bold"><FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></Nav.Link>
+
+                            {
+                                user.email ?
+                                    <Nav.Link onClick={signOut} className="fs-5 fw-bold">Logout</Nav.Link>
+                                    : <Nav.Link as={Link} to="/signup" className="fs-5 fw-bold">Login</Nav.Link>
+                            }
+
+                            <Nav.Link as={Link} to="/signup" className="text-dark fs-5 fw-bold">
                                 <button className="btn-signup">Signup</button>
                             </Nav.Link>
                         </Nav>
